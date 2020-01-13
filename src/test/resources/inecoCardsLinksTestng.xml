@@ -4,11 +4,11 @@
 		<classes>
 			<class name="am.inecobank.home.header.cards.CardsLinksTests">
 				<methods>
+					<!--<include name="lracucichPastatxterLinkValidation"/>
 					<include name="valStandartCardsLink"/>
-					<include name="arCaOrderValidation"/>
+					<include name="arCaOrderValidation"/>-->
 					<include name="worldMastercardBlackEditionLinkValidation"/>
 					<include name="sakagnerEvPlannerLinkValidation"/>
-					<include name="lracucichPastatxterLinkValidation"/>
 				</methods>
 			</class>
 		</classes>
