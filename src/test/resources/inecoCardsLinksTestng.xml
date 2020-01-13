@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Inecobank" verbose="1">
+	<test name="Inecobank Tests">
+		<classes>
+			<class name="am.inecobank.home.header.cards.CardsLinksTests">
+				<methods>
+					<include name="valStandartCardsLink"/>
+					<include name="arCaOrderValidation"/>
+					<include name="worldMastercardBlackEditionLinkValidation"/>
+					<include name="sakagnerEvPlannerLinkValidation"/>
+					<include name="lracucichPastatxterLinkValidation"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Inecobank" verbose="1">
+	<test name="Inecobank Tests">
+		<classes>
+			<class name="am.inecobank.home.header.ayl.AylLinksTests">
+				<methods>
+					<include name="moneyGramManramasnBtnVal"/>
+					<include name="uniStreamManramasnBtnVal"/>
+					<include name="intelExpressManramasnBtnVal"/>
+					<include name="converseTransferManramasnBtnVal"/>
+					<include name=""/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
