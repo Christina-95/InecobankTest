@@ -17,12 +17,16 @@ public class HashivneriPatetnerPage  extends InecoBankHeaderLinks {
 	
 	public static final String HASHIVNERI_PATETNER_PAGE_TITLE = "//h1[@class='content__title']";
 	public static final String INECO_ONE_MIANAL_HIMA_BTN = "(//span[@class='btn__text'])[4]";
+	public static final String STANDART_PATETNER_MIANAL_HIMA_BTN = "(//span[@class='btn__text'])[6]";
 	
 	@FindBy (xpath = HASHIVNERI_PATETNER_PAGE_TITLE)
 	WebElement hashivneriPatetnerpageTitle;
 	
 	@FindBy (xpath = INECO_ONE_MIANAL_HIMA_BTN)
 	WebElement inecoOneMianalHimaBtn;
+	
+	@FindBy (xpath = STANDART_PATETNER_MIANAL_HIMA_BTN)
+	WebElement standartPatetnerMianalHimaBtn;
 	
 	public void waitForHashivneriPatetnerPageTitle() {
 		wait.waitForElementVisibility(hashivneriPatetnerpageTitle);
@@ -36,12 +40,21 @@ public class HashivneriPatetnerPage  extends InecoBankHeaderLinks {
 		else return false;
 	}
 	
-	public void waitForInecoOnlineMianalHimaBtn() {
+	public void waitForInecoOneMianalHimaBtn() {
 		wait.waitForElementToBeClickable(inecoOneMianalHimaBtn);
 	}
 	
 	public MianalInecoOneHashivPatetinPage clickOnInecoOneMianalHimaBt() {
 		inecoOneMianalHimaBtn.click();
 		return new MianalInecoOneHashivPatetinPage(driver);
+	}
+	
+	public void waitForStandartPatetnerMianalHimaBtn() {
+		wait.waitForElementToBeClickable(standartPatetnerMianalHimaBtn);
+	}
+	
+	public MianalStandartHashivPatetinPage clickOnStandartPatetnerMianalHimaBtn() {
+		standartPatetnerMianalHimaBtn.click();
+		return new MianalStandartHashivPatetinPage(driver);
 	}
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import am.inecobank.pages.base.InecoBankBasePage;
 import am.inecobank.pages.home.InecoBankHomePage;
+import am.inecobank.pages.register.InecoBankRegisterPage;
 
 public class InecoBankHeaderLinks extends InecoBankHomePage {
 
@@ -20,6 +21,7 @@ public class InecoBankHeaderLinks extends InecoBankHomePage {
 	public static final String TVAYIN_BANK = "(//span[@class='secondaryNav__action secondaryNav__action--noAction'])[4]";
 	public static final String CARDS = "//a[@class='secondaryNav__action']";
 	public static final String HASHIVNER = "(//span[@class='secondaryNav__action secondaryNav__action--noAction'])[1]";
+	public static final String GRANCVEL_BTN = "(//span[@class='btn__text'])[2]";
 	
 	@FindBy (xpath = AYL)
 	WebElement aylLink;
@@ -32,6 +34,9 @@ public class InecoBankHeaderLinks extends InecoBankHomePage {
 	
 	@FindBy (xpath = HASHIVNER)
 	WebElement hashivnerLink;
+	
+	@FindBy (xpath = GRANCVEL_BTN)
+	WebElement grancvelBtn;
 	
 	public void waitForAyl() {
 		wait.waitForElementVisibility(aylLink);
@@ -64,4 +69,19 @@ public class InecoBankHeaderLinks extends InecoBankHomePage {
 	public void moveToHashivner() {
 		actions.moveToElement(hashivnerLink);
 	}
+	
+	public InecoBankRegisterPage clickOnGrancvelBtn() {
+		grancvelBtn.click();
+		return new InecoBankRegisterPage(driver);
+	}
+	
+	public void waitForGrancvelBtn() {
+		wait.waitForElementToBeClickable(grancvelBtn);
+	}
+	
+	
+	
+	
+	
+	
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import am.inecobank.pages.base.InecoBankBasePage;
+import am.inecobank.pages.business.BusinessPage;
 
 public class InecoBankHomePage extends InecoBankBasePage {
 
@@ -20,6 +21,13 @@ public class InecoBankHomePage extends InecoBankBasePage {
 	@FindBy (xpath = BUSINESS_LINK)
 	WebElement businessLink;
 	
+	public BusinessPage clickOnBusinessLink() {
+		businessLink.click();
+		return new BusinessPage(driver);
+	}
 	
+	public void waitForBusinessLink() {
+		wait.waitForElementToBeClickable(businessLink);
+	}
 
 }

@@ -4,9 +4,9 @@
 		<classes>
 			<class name="am.inecobank.home.header.hashivner.HashivnerLinksTests">
 				<methods>
-					<!--  <include name="hashivneriPatetnerLinkVal"/>-->
-					<include name="inecoOneMIanalHimaBtnFunction"/>
-					<include name=""/>
+					<!--  <include name="hashivneriPatetnerLinkVal"/>
+					<include name="inecoOneMianalHimaBtnFunction"/>-->
+					<include name="standartPatetnerMianalHimaBtnFunction"/>
 					<include name=""/>
 					<include name=""/>
 				</methods>
