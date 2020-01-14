@@ -17,6 +17,8 @@ public class BusinessPage extends InecoBankHomePage {
 	
 	public static final String HASHIVNERI_KARAVARUM_TITLE = "(//h3[@class='promotion__title'])[1]";
 	
+	
+	
 	@FindBy (xpath = HASHIVNERI_KARAVARUM_TITLE)
 	WebElement hashivneriKaravarumTitle;
 	

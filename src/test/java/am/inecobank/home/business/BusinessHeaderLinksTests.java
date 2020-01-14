@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import am.inecobank.base.BaseTestBusiness;
 import am.inecobank.pages.business.header.BusinessHeaderLinks;
+import am.inecobank.pages.business.header.FinansavorumLinks;
 import am.inecobank.pages.business.header.HashivneriKaravarumLinks;
 import am.inecobank.pages.business.header.hashivnerikaravarum.CardsPage;
 import am.inecobank.pages.business.header.hashivnerikaravarum.YntacikHashivnerPage;
@@ -56,6 +57,33 @@ public class BusinessHeaderLinksTests extends BaseTestBusiness {
 		CardsPage cards = new CardsPage(driver);
 		cards.waitForCardsPageTitle();
 		Assert.assertTrue(cards.validateCardsPage());
+	}
+	
+	@Test 
+	//Test Case ID:19 Ֆինանսավորում validation
+	public void finansavorumLinkvalidation() {
+		BusinessHeaderLinks businessHeader = new BusinessHeaderLinks(driver);
+		businessHeader.waitForFinansavorum();
+		businessHeader.moveToFinansavorum();
+		FinansavorumLinks finansavorum = new FinansavorumLinks(driver);
+		finansavorum.waitForVarkavorumLink();
+		finansavorum.waitForBusinessVarkLink();
+		finansavorum.waitForBusinessVarkayinGicLink();
+		finansavorum.waitForBusinessOverdraft();
+		finansavorum.waitForArevtriFinansavorumLink();
+		finansavorum.waitForBankayinErashxiqLink();
+		finansavorum.waitForAkreditivLink();
+		finansavorum.waitForInkasoLink();
+		finansavorum.waitForPaymanagriFinansavorumLink();
+		Assert.assertTrue(finansavorum.validateVarkavorumLink());
+		Assert.assertTrue(finansavorum.validateBusinessVarkLink());
+		Assert.assertTrue(finansavorum.validateBusinessVarkayinGicLink());
+		Assert.assertTrue(finansavorum.validateBusinessOverdraft());
+		Assert.assertTrue(finansavorum.validateArevtriFinansavorumLink());
+		Assert.assertTrue(finansavorum.validateBankayinErashxiqLink());
+		Assert.assertTrue(finansavorum.validateAkreditivLink());
+		Assert.assertTrue(finansavorum.validateInkasoLink());
+		Assert.assertTrue(finansavorum.validatePaymanagriFinansavorumLink());
 	}
 
 }

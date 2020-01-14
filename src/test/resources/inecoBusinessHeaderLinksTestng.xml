@@ -7,6 +7,7 @@
 					<include name="hashivneriKaravarumValidation"/>
 					<include name="yntacikHashivnerLinkvalidation"/>
 					<include name="cardsLinkvalidation"/>
+					<include name="finansavorumLinkvalidation"/>
 				</methods>
 			</class>
 		</classes>
