@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import am.inecobank.base.BaseTestBusiness;
 import am.inecobank.pages.business.header.BusinessHeaderLinks;
 import am.inecobank.pages.business.header.HashivneriKaravarumLinks;
+import am.inecobank.pages.business.header.hashivnerikaravarum.CardsPage;
 import am.inecobank.pages.business.header.hashivnerikaravarum.YntacikHashivnerPage;
 
 public class BusinessHeaderLinksTests extends BaseTestBusiness {
@@ -38,6 +39,23 @@ public class BusinessHeaderLinksTests extends BaseTestBusiness {
 		YntacikHashivnerPage yntacikhashivner = new YntacikHashivnerPage(driver);
 		yntacikhashivner.waitForYntacikHashivnerPageTitle();
 		Assert.assertTrue(yntacikhashivner.validateYntacikHashivnerPage());
+	}
+	
+	@Test 
+	//Test Case ID:18 "Քարտեր" link validation
+	public void cardsLinkvalidation() {
+		BusinessHeaderLinks businessHeader = new BusinessHeaderLinks(driver);
+		businessHeader.waitForHashivneriKaravarum();
+		businessHeader.moveToHashivneriKaravarum();
+		HashivneriKaravarumLinks hashivneriKaravarum = new HashivneriKaravarumLinks(driver);
+		hashivneriKaravarum.waitForYntacikHashivnerLink();
+		Assert.assertTrue(hashivneriKaravarum.validateYntacikHashivnerLink());
+		hashivneriKaravarum.waitForCardsLink();
+		Assert.assertTrue(hashivneriKaravarum.validateCardsLink());
+		hashivneriKaravarum.clickOnCardsLink();
+		CardsPage cards = new CardsPage(driver);
+		cards.waitForCardsPageTitle();
+		Assert.assertTrue(cards.validateCardsPage());
 	}
 
 }
