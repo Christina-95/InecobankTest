@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import am.inecobank.pages.base.InecoBankBasePage;
+import am.inecobank.pages.business.header.hashivnerikaravarum.YntacikHashivnerPage;
 
 
 public class HashivneriKaravarumLinks extends BusinessHeaderLinks {
@@ -46,6 +47,11 @@ public class HashivneriKaravarumLinks extends BusinessHeaderLinks {
 			return true;
 		}
 		else return false;
+	}
+	
+	public YntacikHashivnerPage clickOnYntacikHashivnerLink() {
+		yntacik_Hashivner_Link.click();
+		return new YntacikHashivnerPage(driver);
 	}
 
 }

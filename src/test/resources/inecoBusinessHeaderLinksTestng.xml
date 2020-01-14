@@ -5,7 +5,7 @@
 			<class name="am.inecobank.home.business.BusinessHeaderLinksTests">
 				<methods>
 					<include name="hashivneriKaravarumValidation"/>
-					<include name=""/>
+					<include name="yntacikHashivnerLinkvalidation"/>
 				</methods>
 			</class>
 		</classes>
