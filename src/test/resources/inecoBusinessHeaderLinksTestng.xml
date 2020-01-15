@@ -8,6 +8,8 @@
 					<include name="yntacikHashivnerLinkvalidation"/>
 					<include name="cardsLinkvalidation"/>
 					<include name="finansavorumLinkvalidation"/>
+					<include name="varkavorumLinkvalidation"/>
+					<include name="arevtriFinansavorumLinkvalidation"/>
 				</methods>
 			</class>
 		</classes>

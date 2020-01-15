@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import am.inecobank.pages.base.InecoBankBasePage;
+import am.inecobank.pages.business.header.finansavorum.ArevtriFinansavorumPage;
+import am.inecobank.pages.business.header.finansavorum.VarkavorumPage;
 
 public class FinansavorumLinks  extends BusinessHeaderLinks {
 
@@ -55,6 +57,11 @@ public class FinansavorumLinks  extends BusinessHeaderLinks {
 		wait.waitForElementToBeClickable(varkavorumLink);
 	}
 	
+	public VarkavorumPage clickOnVarkavorumLink() {
+		varkavorumLink.click();
+		return new VarkavorumPage(driver);
+	}
+	
 	public boolean validateVarkavorumLink() {
 		if(varkavorumLink.isDisplayed()) {
 			System.out.println("Varkavorum link is valid ");
@@ -66,6 +73,7 @@ public class FinansavorumLinks  extends BusinessHeaderLinks {
 	public void waitForBusinessVarkLink() {
 		wait.waitForElementToBeClickable(businessVarkLink);
 	}
+	
 	
 	public boolean validateBusinessVarkLink() {
 		if(businessVarkLink.isDisplayed()) {
@@ -101,6 +109,11 @@ public class FinansavorumLinks  extends BusinessHeaderLinks {
 	
 	public void waitForArevtriFinansavorumLink() {
 		wait.waitForElementToBeClickable(arevtriFinansavorumLink);
+	}
+	
+	public ArevtriFinansavorumPage clickOnArevtriFinansavorumLink() {
+		arevtriFinansavorumLink.click();
+		return new ArevtriFinansavorumPage(driver);
 	}
 	
 	public boolean validateArevtriFinansavorumLink() {
