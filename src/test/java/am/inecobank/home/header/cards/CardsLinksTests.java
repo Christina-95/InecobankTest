@@ -9,6 +9,8 @@ import am.inecobank.pages.home.header.InecoBankHeaderLinks;
 import am.inecobank.pages.home.header.cards.ArCaCardOrderPage;
 import am.inecobank.pages.home.header.cards.StandartCardsPage;
 import am.inecobank.pages.home.header.cards.WorldMasterCardBlackEditionPage;
+import am.inecobank.pages.home.header.cards.worldmastercardblackeditionpage.LracucichPastatxterPage;
+import am.inecobank.pages.home.header.cards.worldmastercardblackeditionpage.SpasarkmanSakagnerPage;
 
 public class CardsLinksTests extends BaseTest{
 	
@@ -72,8 +74,9 @@ public class CardsLinksTests extends BaseTest{
 		Assert.assertTrue(masterCardBlackeditionPage.validateBlackEditionCardPage());
 		masterCardBlackeditionPage.waitForSakagnerEvPlannerLink();
 		masterCardBlackeditionPage.clickOnSakagnerEvPlannerLink();
-		masterCardBlackeditionPage.waitForCartayinHashviArjuytText();
-		Assert.assertTrue(masterCardBlackeditionPage.validateSakagnerEvPlannerPage());
+		SpasarkmanSakagnerPage spasarkumPage = new SpasarkmanSakagnerPage(driver);
+		spasarkumPage.waitForCartayinHashviArjuytText();
+		Assert.assertTrue(spasarkumPage.validateSakagnerEvPlannerPage());
 	}
 	
 	@Test
@@ -89,7 +92,8 @@ public class CardsLinksTests extends BaseTest{
 		Assert.assertTrue(masterCardBlackeditionPage.validateBlackEditionCardPage());
 		masterCardBlackeditionPage.waitForLracucichPastatxterLink();
 		masterCardBlackeditionPage.clickOnLracucichPastatxterLink();
-		masterCardBlackeditionPage.waitForBlackEditionCardSpasarkmanSakagnerText();
-		Assert.assertTrue(masterCardBlackeditionPage.validateLracucichPastatxterPage());
+		LracucichPastatxterPage lracucichPage = new LracucichPastatxterPage(driver);
+		lracucichPage.waitForBlackEditionCardSpasarkmanSakagnerText();
+		Assert.assertTrue(lracucichPage.validateLracucichPastatxterPage());
 	}
 }

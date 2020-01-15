@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 import am.inecobank.pages.base.InecoBankBasePage;
 import am.inecobank.pages.home.header.InecoBankHeaderLinks;
+import am.inecobank.pages.home.header.cards.worldmastercardblackeditionpage.LracucichPastatxterPage;
+import am.inecobank.pages.home.header.cards.worldmastercardblackeditionpage.SpasarkmanSakagnerPage;
 
 public class WorldMasterCardBlackEditionPage extends InecoBankHeaderLinks {
 
@@ -17,9 +19,7 @@ public class WorldMasterCardBlackEditionPage extends InecoBankHeaderLinks {
 	
 	public static final String WORLD_MASTERED_BLACK_EDITION_PAGE_TITLE = "//h1[contains(text(),'World Mastercard Black Edition')]";
 	public static final String SAKAGNER_EV_PAYMANNER_LINK = "(//a[@class='tab__item tab__item--primary'])[1]";
-	public static final String CARTAYIN_HASHVI_ARJUYT_TEXT = "(//div[@class='row__title'])[1]";
 	public static final String LRACUCICH_PASTATXTER_LINK = "(//a[@class='tab__item tab__item--primary'])[2]";
-	public static final String WORLD_MASTERCARD_BLACK_EDITION_CARD_SPASARKMAN_SAKAGNER_DOCUMENT= "(//span[@class='document__title'])[1]";
 	
 	@FindBy(xpath = WORLD_MASTERED_BLACK_EDITION_PAGE_TITLE)
 	WebElement worldMasteredBlackEditionCardTitle;
@@ -27,14 +27,9 @@ public class WorldMasterCardBlackEditionPage extends InecoBankHeaderLinks {
 	@FindBy (xpath = SAKAGNER_EV_PAYMANNER_LINK)
 	WebElement sakagnerEvPaymannerLink;
 	
-	@FindBy (xpath = CARTAYIN_HASHVI_ARJUYT_TEXT)
-	WebElement cartayinHashviArjuytText;
-	
 	@FindBy (xpath = LRACUCICH_PASTATXTER_LINK)
 	WebElement lracucichPastatxterLink;
 	
-	@FindBy (xpath = WORLD_MASTERCARD_BLACK_EDITION_CARD_SPASARKMAN_SAKAGNER_DOCUMENT)
-	WebElement masterCardBlackSpasarkmanSakagnerDocument;
 	
 	public void waitForBlackeditionCardPageTitle() {
 		wait.waitForElementVisibility(worldMasteredBlackEditionCardTitle);
@@ -47,44 +42,23 @@ public class WorldMasterCardBlackEditionPage extends InecoBankHeaderLinks {
 		}
 		else return false;
 	}
-	
+
 	public void waitForSakagnerEvPlannerLink() {
 		wait.waitForElementToBeClickable(sakagnerEvPaymannerLink);
 	}
 	
-	public void clickOnSakagnerEvPlannerLink() {
+	public SpasarkmanSakagnerPage clickOnSakagnerEvPlannerLink() {
 		sakagnerEvPaymannerLink.click();
-	}
-	
-	public void waitForCartayinHashviArjuytText() {
-		wait.waitForElementVisibility(cartayinHashviArjuytText);
-	}
-	
-	public boolean validateSakagnerEvPlannerPage() {
-		if (cartayinHashviArjuytText.isDisplayed()) {
-			System.out.println("Sakagner ev Planner page is displayed");
-			return true;
-		}
-		else return false;
+		return new SpasarkmanSakagnerPage(driver);
 	}
 	
 	public void waitForLracucichPastatxterLink() {
 		wait.waitForElementToBeClickable(lracucichPastatxterLink);
 	}
 	
-	public void clickOnLracucichPastatxterLink() {
+	public LracucichPastatxterPage clickOnLracucichPastatxterLink() {
 		lracucichPastatxterLink.click();
+		return new LracucichPastatxterPage(driver);
 	}
 	
-	public void waitForBlackEditionCardSpasarkmanSakagnerText() {
-		wait.waitForElementVisibility(masterCardBlackSpasarkmanSakagnerDocument);
-	}
-	
-	public boolean validateLracucichPastatxterPage() {
-		if(masterCardBlackSpasarkmanSakagnerDocument.isDisplayed()) {
-			System.out.println("Lracucich pastatxter page is dipslayed");
-			return true;
-		}
-		else return false;
-	}
 }
