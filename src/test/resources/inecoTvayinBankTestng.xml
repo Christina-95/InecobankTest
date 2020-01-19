@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Inecobank" verbose="1">
+	<test name="Inecobank Tests">
+		<classes>
+			<class name="am.inecobank.home.header.tvayinbank.TvayinBankLinksTests">
+				<methods>
+					<include name="inecoPayLinkFunctionality"/>
+					<include name=""/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
